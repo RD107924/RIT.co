@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333; /* 主要文字顏色保持深色以便閱讀 */
+  background-color: #fff8e1; /* 淺黃色作為背景 */
+}
+
+.hero-section {
+  background-color: #ffb300; /* 亮橘黃色作為頂部區塊背景 */
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.2em;
+}
+
+.brand-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.brand-item {
+  background-color: white; /* 品牌卡片背景保持白色以突出內容 */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.brand-item:hover {
+  transform: translateY(-5px);
+}
+
+.brand-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.brand-item h2 {
+  color: #f57c00; /* 品牌標題使用較深的橘色 */
+  margin-bottom: 15px;
+}
+
+.brand-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.brand-item ul li {
+  margin-bottom: 8px;
+  font-size: 0.95em;
+}
+
+.line-link {
+  margin-top: 20px;
+}
+
+.line-link a {
+  display: inline-block;
+  background-color: #ffa000; /* LINE 連結按鈕使用橘色 */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.line-link a:hover {
+  background-color: #fb8c00; /* 滑鼠懸停時顏色變深 */
+}
+
+.contact-section {
+  background-color: #ff8f00; /* 聯絡資訊區塊使用更深的橘色 */
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.contact-section h2 {
+  margin-bottom: 15px;
+}
