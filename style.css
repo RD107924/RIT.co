@@ -9,7 +9,7 @@ body {
   line-height: 1.6; /* 調整行高 */
   color: #333; /* 深灰色文字 */
   background-color: #fff8e1; /* 主背景：非常淺的黃色 */
-  overflow-x: hidden;
+  overflow-x: hidden; /* 防止頁面橫向滾動 */
   scroll-behavior: smooth; /* 平滑滾動效果 */
 }
 
@@ -197,11 +197,11 @@ body {
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   padding: 30px;
-  min-width: 280px;
-  max-width: 30%;
-  flex-basis: 30%;
-  flex-grow: 1;
-  flex-shrink: 1;
+  min-width: 280px; /* 卡片最小寬度 */
+  max-width: 30%; /* 讓三個卡片在寬螢幕下能夠並排，每個佔約30% */
+  flex-basis: 30%; /* 設置基礎寬度 */
+  flex-grow: 1; /* 允許卡片在空間充足時等比放大 */
+  flex-shrink: 1; /* 允許卡片在空間不足時縮小 */
 
   text-align: center;
   transition: transform 0.2s ease-out, box-shadow 0.2s ease-out,
@@ -222,14 +222,17 @@ body {
   height: auto;
   margin-bottom: 20px;
   transition: transform 0.3s ease;
-  border: 1px solid #ffecb3; /* LOGO 框線：淺橘黃色 */
-  padding: 8px;
-  border-radius: 4px;
+  /* 移除邊框並置中 */
+  border: none; /* 移除邊框 */
+  padding: 0; /* 移除內邊距 */
+  border-radius: 0; /* 移除圓角 */
+  display: block; /* 讓 margin auto 有效 */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .brand-item:hover .brand-logo {
   transform: scale(1.02);
-  border-color: #ffb300; /* 懸停時 LOGO 框線變為中橘色 */
 }
 
 .brand-item h2 {
@@ -267,8 +270,9 @@ body {
   font-weight: 700;
 }
 
-/* 品牌項目內的計算器嵌入區塊 */
-.brand-item .calculator-embed {
+/* 品牌項目內的計算器嵌入區塊 - 只針對小跑豬家具物流應用 */
+.brand-item:nth-child(2) .calculator-embed {
+  /* 注意這裡的 :nth-child(2) 選擇器 */
   margin-top: 20px;
   margin-bottom: 25px;
   padding-top: 15px;
@@ -276,17 +280,20 @@ body {
   text-align: center;
 }
 
-.brand-item .calculator-embed h3 {
+.brand-item:nth-child(2) .calculator-embed h3 {
   font-size: 1.1em;
   color: #555;
   margin-bottom: 15px;
   font-weight: 500;
 }
 
-.brand-item .calculator-embed iframe {
+.brand-item:nth-child(2) .calculator-embed iframe {
   border: 1px solid #ffecb3; /* 給 iframe 加上淺橘黃色邊框 */
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  width: 100%; /* 確保在父容器中佔滿寬度 */
+  max-width: 400px; /* 設定最大寬度 */
+  height: 400px; /* 固定高度 */
 }
 
 /* LINE 連結按鈕 - 簡潔設計 */
@@ -381,23 +388,23 @@ body {
 /* 比較表格區塊 - 清爽簡潔 */
 .comparison-section {
   background-color: #fff8e1; /* 與 body 背景色一致 */
-  padding: 80px 20px;
+  padding: 60px 20px; /* 減少上下 padding */
   text-align: center;
-  margin-top: 60px;
+  margin-top: 50px; /* 減少上 margin */
 }
 
 .comparison-section h2 {
   font-family: "Noto Sans TC", Arial, sans-serif;
-  font-size: 2.2em;
+  font-size: 2em; /* 稍微縮小標題 */
   color: #444;
-  margin-bottom: 30px;
+  margin-bottom: 25px; /* 減少下方 margin */
   letter-spacing: 0.5px;
   text-shadow: none;
   font-weight: 500;
 }
 
 .table-container {
-  max-width: 1000px;
+  max-width: 95%; /* 讓表格在小螢幕上能更好地適應 */
   margin: 0 auto;
   overflow-x: auto;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -416,12 +423,13 @@ table {
 
 table th,
 table td {
-  padding: 15px;
+  padding: 12px 10px; /* 稍微減少 padding */
   text-align: left;
   border: 1px solid #ffe0b2; /* 更淺的橘黃色邊框 */
-  vertical-align: top;
-  font-size: 0.95em;
+  vertical-align: middle; /* 文字垂直置中 */
+  font-size: 0.9em; /* 稍微縮小字體 */
   color: #555;
+  white-space: nowrap; /* 防止內容過長時換行，保持表格整齊 (搭配 overflow-x: auto) */
 }
 
 table th {
@@ -590,6 +598,7 @@ table tr:hover {
     align-items: center;
     transition: right 0.3s ease-in-out;
     z-index: 999;
+    padding-top: 60px; /* 避免內容被導航列遮擋 */
   }
   .nav-menu.active {
     right: 0;
@@ -612,6 +621,9 @@ table tr:hover {
   }
   /* 導覽列和漢堡選單的響應式 END */
 
+  .hero-section {
+    padding: 80px 20px 60px; /* 調整內邊距 */
+  }
   .hero-section h1 .main-title {
     font-size: 2.2em;
   }
@@ -628,6 +640,7 @@ table tr:hover {
 
   .hero-section p {
     font-size: 1em;
+    max-width: 90%; /* 更大佔比 */
   }
 
   .brand-section {
@@ -637,8 +650,8 @@ table tr:hover {
   }
 
   .brand-item {
-    width: 90%;
-    max-width: 350px;
+    width: 95%; /* 佔據更多寬度 */
+    max-width: 400px; /* 稍微放大最大寬度 */
     padding: 25px;
   }
 
@@ -672,9 +685,27 @@ table tr:hover {
     padding: 20px 15px;
   }
 
-  /* 計算器 iframe 的響應式調整 */
-  .brand-item .calculator-embed iframe {
-    height: 350px;
+  /* 計算器 iframe 的響應式調整 (如果它在品牌卡片中) */
+  .brand-item:nth-child(2) .calculator-embed iframe {
+    /* 針對小跑豬家具物流的 iframe */
+    height: 300px; /* 小螢幕下可適當調整 iframe 高度 */
+  }
+
+  .guide-steps .guide-step-item {
+    /* 手機版教學項目寬度調整 */
+    width: 95%;
+    max-width: 400px;
+  }
+
+  .testimonials-grid .testimonial-item {
+    /* 手機版見證項目調整 */
+    width: 95%;
+    max-width: 400px;
+    align-items: center; /* 見證項目整體置中 */
+  }
+
+  .chat-bubble {
+    max-width: 100%; /* 氣泡佔滿寬度 */
   }
 }
 
@@ -697,15 +728,24 @@ table tr:hover {
     font-size: 0.85em;
   }
 
-  .why-us-grid,
-  .testimonials-grid,
-  .guide-steps {
-    grid-template-columns: 1fr;
-  }
-
+  .brand-section,
   .shipping-guide-section,
   .comparison-section,
   .testimonials-section {
-    padding: 40px 15px;
+    padding: 40px 15px; /* 進一步調整區塊內邊距 */
+  }
+
+  .why-us-grid,
+  .testimonials-grid,
+  .guide-steps {
+    grid-template-columns: 1fr; /* 在最小螢幕上單列顯示 */
+    gap: 20px; /* 網格間距 */
+  }
+
+  .guide-step-item,
+  .testimonial-item {
+    /* 確保單列時也有適當寬度 */
+    width: 100%;
+    max-width: none; /* 取消最大寬度限制 */
   }
 }
