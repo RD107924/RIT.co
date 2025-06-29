@@ -1,0 +1,573 @@
+/* Google Fonts 導入 - 只使用思源黑體 (Noto Sans TC) */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap");
+
+/* 全局設定 */
+body {
+  font-family: "Noto Sans TC", Arial, sans-serif; /* 所有文字都使用思源黑體 */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6; /* 調整行高 */
+  color: #333; /* 深灰色文字 */
+  background-color: #f8f8f8; /* 淺灰色背景，增加質感 */
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* 平滑滾動效果 */
+}
+
+/* 英雄區塊 - 更簡潔的開場 */
+.hero-section {
+  background-color: #ffffff; /* 純白色背景 */
+  color: #333;
+  text-align: center;
+  padding: 100px 20px 80px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 更輕微的陰影 */
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* 移除背景動畫 */
+.hero-section::before,
+.hero-section::after {
+  content: none;
+}
+
+/* 純文字標題的樣式 (H1) */
+.hero-section h1 {
+  font-family: "Noto Sans TC", Arial, sans-serif;
+  line-height: 1.2; /* 整體行高稍微緊湊 */
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+  color: #444;
+  text-shadow: none;
+  animation: slideInFromTop 1s ease-out;
+  display: flex; /* 使用 Flexbox 讓內部元素可以更精準排版 */
+  flex-direction: column; /* 垂直排列 */
+  align-items: center; /* 水平置中 */
+}
+
+/* 主要標語 */
+.hero-section h1 .main-title {
+  font-size: 2.8em; /* 較大的字體 */
+  font-weight: 700; /* 加粗 */
+  color: #333; /* 更深一點的顏色 */
+  margin-bottom: 10px; /* 與下方品牌的間距 */
+}
+
+/* 旗下品牌名稱 */
+.hero-section h1 .sub-brands {
+  font-size: 1.6em; /* 次要字體大小 */
+  font-weight: 400; /* 正常字重 */
+  color: #666; /* 淺灰色 */
+  margin-bottom: 20px; /* 與下方分隔線的間距 */
+  letter-spacing: 1px; /* 略微增加字距 */
+}
+
+/* 分隔線 */
+.hero-section h1 .title-divider {
+  display: block; /* 讓它變成一個塊級元素 */
+  width: 60px; /* 線條長度 */
+  height: 2px; /* 線條粗細 */
+  background-color: #e0e0e0; /* 淺灰色線條 */
+  margin: 15px auto 15px; /* 上下間距並置中 */
+}
+
+/* 公司名稱 */
+.hero-section h1 .company-name {
+  font-size: 1.2em; /* 較小的字體 */
+  font-weight: 300; /* 較細的字重 */
+  color: #888; /* 更淺的灰色 */
+  margin-top: 10px; /* 與上方分隔線的間距 */
+  letter-spacing: 0.8px;
+  text-transform: uppercase; /* 轉為大寫，增加設計感 */
+}
+
+.hero-section p {
+  font-size: 1.1em; /* 段落文字簡潔 */
+  max-width: 700px; /* 略微縮小最大寬度，增加留白感 */
+  margin: 0 auto;
+  padding-top: 10px;
+  line-height: 1.7;
+  animation: fadeIn 1.5s ease-out 0.5s forwards;
+  opacity: 0;
+  text-shadow: none; /* 移除文字陰影 */
+}
+
+/* 品牌介紹區塊 - 簡潔對齊的卡片 */
+.brand-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px; /* 縮小卡片間距，更緊湊 */
+  padding: 60px 20px;
+  max-width: 1100px; /* 縮小最大寬度，增加左右留白 */
+  margin: 0 auto;
+}
+
+.brand-item {
+  background-color: #ffffff; /* 純白色卡片背景 */
+  border: 1px solid #e0e0e0; /* 淺灰色邊框，增加質感 */
+  border-radius: 4px; /* 更小的圓角，接近直角 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 極輕微的陰影 */
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out,
+    border-color 0.2s ease-out; /* 更快的過渡 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand-item:hover {
+  transform: translateY(-3px); /* 懸停時輕微上移 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* 懸停時陰影稍明顯 */
+  border-color: #c0c0c0; /* 懸停時邊框顏色變深 */
+}
+
+.brand-logo {
+  max-width: 140px; /* 略微縮小 LOGO */
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  border: 1px solid #e0e0e0; /* LOGO 框線改為淺灰色細線 */
+  padding: 8px; /* 內邊距減少 */
+  border-radius: 4px; /* LOGO 框線也用小圓角 */
+}
+
+.brand-item:hover .brand-logo {
+  transform: scale(1.02); /* 懸停時 LOGO 微放大 */
+  border-color: #c0c0c0; /* 懸停時邊框顏色變深 */
+}
+
+.brand-item h2 {
+  font-family: "Noto Sans TC", Arial, sans-serif; /* 確保 H2 也使用思源黑體 */
+  color: #555; /* 淺灰色標題 */
+  font-size: 1.6em; /* 標題字體適中 */
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0; /* 標題下方更細更淺的底線 */
+  padding-bottom: 8px;
+  font-weight: 500;
+}
+
+.brand-item ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: auto;
+  flex-grow: 1;
+}
+
+.brand-item ul li {
+  margin-bottom: 8px; /* 減少行間距，更緊湊 */
+  font-size: 0.95em;
+  color: #666; /* 淺灰色文字 */
+  position: relative;
+  padding-left: 20px; /* 減少左側留白 */
+}
+
+.brand-item ul li::before {
+  content: "•"; /* 使用簡潔的圓點作為列表符號 */
+  color: #888; /* 灰色圓點 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+
+/* 品牌項目內的計算器嵌入區塊 */
+.brand-item .calculator-embed {
+  margin-top: 20px; /* 與上方列表的間距 */
+  margin-bottom: 25px; /* 與下方 LINE 按鈕的間距 */
+  padding-top: 15px; /* 內邊距 */
+  border-top: 1px solid #f0f0f0; /* 上方增加一條淺細線 */
+  text-align: center;
+}
+
+.brand-item .calculator-embed h3 {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.brand-item .calculator-embed iframe {
+  border: 1px solid #e0e0e0; /* 給 iframe 加上淺色邊框 */
+  border-radius: 4px; /* 與 MUJI 風格一致的圓角 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); /* 輕微陰影 */
+}
+
+/* LINE 連結按鈕 - 簡潔設計 */
+.line-link {
+  margin-top: 25px; /* 調整上方間距 */
+}
+
+.line-link a {
+  display: inline-block;
+  background-color: #007bff; /* 藍色按鈕，或使用 MUJI 常用的小部分亮色 */
+  color: white;
+  padding: 10px 20px; /* 調整按鈕大小 */
+  border-radius: 4px; /* 方形小圓角按鈕 */
+  text-decoration: none;
+  font-weight: 500; /* 字體不過粗 */
+  font-size: 1em;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: none; /* 移除按鈕陰影，更扁平化 */
+  border: 1px solid #007bff; /* 初始邊框 */
+}
+
+.line-link a:hover {
+  background-color: #0056b3; /* 懸停時顏色變深 */
+  transform: translateY(0); /* 移除上移效果，更靜態 */
+  box-shadow: none;
+}
+
+/* 新增：為什麼選擇我們？區塊樣式 */
+.why-us-section {
+  background-color: #ffffff; /* 白色背景 */
+  padding: 80px 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
+  margin-top: 60px; /* 與上方區塊間距 */
+}
+
+.why-us-section h2 {
+  font-family: "Noto Sans TC", Arial, sans-serif;
+  font-size: 2.2em;
+  color: #444;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.why-us-grid {
+  display: grid; /* 使用 Grid 排版 */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* 自動適應列數，最小寬度280px */
+  gap: 30px; /* 網格間距 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-us-item {
+  background-color: #fdfdfd; /* 淺灰背景 */
+  border: 1px solid #e5e5e5; /* 淺邊框 */
+  border-radius: 4px;
+  padding: 25px;
+  text-align: left; /* 內容左對齊 */
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.why-us-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* 懸停陰影 */
+  border-color: #c5c5c5; /* 懸停邊框色 */
+}
+
+.why-us-item h3 {
+  font-family: "Noto Sans TC", Arial, sans-serif;
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 10px;
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0; /* 標題下方細線 */
+  padding-bottom: 8px;
+}
+
+.why-us-item p {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* 比較表格區塊 - 清爽簡潔 */
+.comparison-section {
+  background-color: #f8f8f8; /* 與 body 背景色一致 */
+  padding: 80px 20px; /* 增加上下內邊距 */
+  text-align: center;
+  margin-top: 60px; /* 與上方區塊間距 */
+}
+
+.comparison-section h2 {
+  font-family: "Noto Sans TC", Arial, sans-serif;
+  font-size: 2.2em;
+  color: #444;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+  font-weight: 500;
+}
+
+.table-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 更輕微的陰影 */
+  border-radius: 4px; /* 小圓角 */
+  border: 1px solid #e0e0e0; /* 淺灰色邊框 */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 15px; /* 調整內邊距 */
+  text-align: left;
+  border: 1px solid #f0f0f0; /* 更淺的邊框顏色 */
+  vertical-align: top;
+  font-size: 0.95em;
+  color: #555;
+}
+
+table th {
+  background-color: #f5f5f5; /* 淺灰色表頭背景 */
+  color: #333; /* 深灰色表頭文字 */
+  font-weight: 500;
+  font-size: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+table tr:nth-child(even) {
+  background-color: #fafafa; /* 更淺的偶數行背景色 */
+}
+
+table tr:hover {
+  background-color: #eeeeee; /* 懸停時淺灰色 */
+  transition: background-color 0.2s ease;
+}
+
+/* 新增：成功案例/客戶見證區塊樣式 */
+.testimonials-section {
+  background-color: #ffffff; /* 白色背景 */
+  padding: 80px 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-top: 60px;
+}
+
+.testimonials-section h2 {
+  font-family: "Noto Sans TC", Arial, sans-serif;
+  font-size: 2.2em;
+  color: #444;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* 自動適應，最小300px */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 左對齊氣泡 */
+  gap: 15px; /* 氣泡間距 */
+}
+
+.chat-bubble {
+  background-color: #f5f5f5; /* 淺灰氣泡背景 */
+  border-radius: 12px;
+  padding: 15px 20px;
+  text-align: left;
+  position: relative;
+  max-width: 90%; /* 限制氣泡寬度 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
+  line-height: 1.5;
+}
+
+.chat-bubble p {
+  font-size: 0.95em;
+  color: #444;
+  margin-bottom: 5px; /* 內文與署名間距 */
+  margin-top: 0;
+}
+
+.chat-bubble span {
+  font-size: 0.85em;
+  color: #777;
+  display: block; /* 讓署名獨立一行 */
+  text-align: right; /* 署名右對齊 */
+  margin-top: 8px;
+}
+
+.client-bubble {
+  background-color: #e0e0e0; /* 客戶氣泡顏色稍深 */
+  align-self: flex-start; /* 客戶氣泡左對齊 */
+  border-bottom-left-radius: 4px; /* 模擬對話框的尖角 */
+}
+
+.response-bubble {
+  background-color: #fdfdfd; /* 回應氣泡顏色稍淺 */
+  align-self: flex-end; /* 回應氣泡右對齊 */
+  border-bottom-right-radius: 4px; /* 模擬對話框的尖角 */
+}
+
+/* 頁腳只保留版權資訊 */
+.contact-section {
+  background-color: #ffffff; /* 純白色背景 */
+  color: #555;
+  text-align: center;
+  padding: 30px 20px; /* 減少內邊距，使其更緊湊 */
+  margin-top: 60px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
+}
+
+.contact-section .copyright {
+  font-size: 0.9em;
+  color: #888; /* 稍淺的顏色，使其不那麼突出但依然可見 */
+  margin: 0; /* 確保沒有額外的邊距 */
+  padding: 0; /* 確保沒有額外的內邊距 */
+}
+
+/* 動畫定義 - 保持簡潔 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-30px); /* 略微縮小滑入距離 */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 響應式設計 */
+@media (max-width: 900px) {
+  /* 調整網格斷點 */
+  .why-us-grid,
+  .testimonials-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* 更小的最小寬度 */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 .main-title {
+    /* H1 各部分響應式調整 */
+    font-size: 2.2em;
+  }
+  .hero-section h1 .sub-brands {
+    font-size: 1.3em;
+  }
+  .hero-section h1 .title-divider {
+    width: 40px; /* 小螢幕下線條變短 */
+    margin: 10px auto;
+  }
+  .hero-section h1 .company-name {
+    font-size: 1em;
+  }
+
+  .hero-section p {
+    font-size: 1em;
+  }
+
+  .brand-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+  }
+
+  .brand-item {
+    width: 90%;
+    max-width: 350px;
+    padding: 25px;
+  }
+
+  .brand-item h2 {
+    font-size: 1.4em;
+  }
+
+  .brand-item ul li {
+    font-size: 0.85em;
+  }
+
+  .line-link a {
+    font-size: 0.95em;
+    padding: 8px 18px;
+  }
+
+  .comparison-section h2,
+  .why-us-section h2,
+  .testimonials-section h2 {
+    font-size: 1.8em;
+  }
+
+  table th,
+  table td {
+    padding: 10px;
+    font-size: 0.85em;
+  }
+
+  /* 聯絡資訊區塊的響應式樣式 */
+  .contact-section {
+    padding: 20px 15px; /* 小螢幕下進一步減少內邊距 */
+  }
+
+  /* 計算器 iframe 的響應式調整 */
+  .brand-item .calculator-embed iframe {
+    height: 350px; /* 小螢幕下可適當調整 iframe 高度 */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 .main-title {
+    /* H1 各部分響應式調整 */
+    font-size: 1.6em;
+  }
+  .hero-section h1 .sub-brands {
+    font-size: 1.1em;
+  }
+  .hero-section h1 .title-divider {
+    width: 30px;
+    margin: 8px auto;
+  }
+  .hero-section h1 .company-name {
+    font-size: 0.9em;
+  }
+
+  .hero-section p {
+    font-size: 0.85em;
+  }
+
+  .why-us-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* 在最小螢幕上單列顯示 */
+  }
+
+  .why-us-section,
+  .comparison-section,
+  .testimonials-section {
+    padding: 40px 15px;
+  }
+}
